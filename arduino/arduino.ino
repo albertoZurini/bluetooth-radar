@@ -48,7 +48,7 @@ void setup() {
   bluetooth.print("$");  // Enter command mode
   delay(100);*/
   
-  bluetooth.println("U,9600,N");  // Temporarily Change the baudrate to 9600, no parity
+  bluetooth.println("U,9600,N");  // Temporarily Change the baud rate to 9600, no parity
   delay(100);
   
   bluetooth.begin(9600);  // Start bluetooth serial at 9600
@@ -57,10 +57,8 @@ void setup() {
 
 void loop() {
 
-  int x, y;
-  
   static char k;
-
+  
   static bool amIRotating = false;
   
   if(bluetooth.available())  // If the bluetooth sent any characters
@@ -70,30 +68,30 @@ void loop() {
     
     if(k == 'd') { // d = distance
       long nowDistance = myRobot.CalcDist();
-
+  
       String toSend =  "{\"dst\": ";
       toSend += String(nowDistance);
       toSend += "}";
-
+  
       Serial.println(toSend);
       bluetooth.print(toSend);
     }
-
+  
     if(k == 't') { // t = toggle rotation
       if(amIRotating) myRobot.StopRotation();
       else myRobot.RotateRight();
       amIRotating = !amIRotating;
     }
-
+  
     if(k == 's') { // s = stop rotation
       amIRotating = false;
       myRobot.StopRotation();
     }
-
+  
     if(k == 'b') { // b = benchmark
       bluetooth.print('b');
     }
-
+  
     Serial.print("Received from BT: ");
     Serial.println(k);
     
