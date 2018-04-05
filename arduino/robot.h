@@ -27,9 +27,6 @@ class robot
     byte trigPin, echoPin; // for ultrasonic sensor
     
     Servo servoRight, servoLeft; // for servos
-    
-    byte CLK_pin, EN_pin, DIO_pin; // for compass
-    int X_Data, Y_Data, angle; // for compass readings
 };
 
 
