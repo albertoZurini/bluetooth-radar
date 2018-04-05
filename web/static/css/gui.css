@@ -1,0 +1,58 @@
+:root{
+  --popup-width: 75vmin;
+  --popup-height: 75vmin;
+}
+
+.blueConnect{
+  width: var(--popup-width);
+  height: var(--popup-height);
+  position: fixed;
+  left: calc((100vw - var(--popup-width)) / 2);
+  top: calc((100vh - var(--popup-height)) / 2);
+  background: rgba(255,255,255,.6);
+  border-radius: 8px;
+  z-index: 9999;
+  text-align: center;
+}
+
+.blueConnect .title {
+  font-size: 20px;
+}
+
+.closePopup{
+  text-align: right;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.shadow{
+  position: fixed;
+  background: rgba(0,0,0,.75);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.content {
+  transition: .3s;
+}
+
+.content.blurred{
+  filter: blur(5px);
+}
+
+label {
+  color: #FFF !important;
+}
+
+.preloader-wrapper{
+  position: absolute;
+  top: calc((var(--popup-height) - 64px) / 2);
+  left: calc((var(--popup-width) - 64px) / 2);
+}
+
+.divT{
+  text-align: center;
+}
