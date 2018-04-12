@@ -35,7 +35,7 @@ long robot::CalcDist()
 {
   long dist = this->Ping()/58; //returns cm
   
-  if(dist<=0) return 90;
+  //if(dist<=0) return 90;
   
   return dist; 
 }
