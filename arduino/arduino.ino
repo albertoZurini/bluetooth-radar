@@ -16,20 +16,12 @@
 Servo servoRight;
 Servo servoLeft; 
 
-// LED
-#define ledPin 2
-
-// Rotation precision
-#define prec 10
-
 robot myRobot = robot();
 
 SoftwareSerial bluetooth(bluetoothTx, bluetoothRx);
 
 void setup() {
   Serial.begin(9600);  // Begin the serial monitor at 9600bps
-
-  pinMode(ledPin, OUTPUT);
 
   myRobot.AttachServos(servoLeftPin, servoRightPin);
   
