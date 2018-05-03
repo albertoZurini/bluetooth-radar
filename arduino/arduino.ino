@@ -33,13 +33,13 @@ void setup() {
   bluetooth.print("$");  // Enter command mode
   delay(100); // Wait for response
 /*
-  bluetooth.println("SN,BlueRadar"); // set name
+  bluetooth.println("SN,SupercazzolaPrematura"); // set name
 
   bluetooth.print("$");  // Print three times individually
   bluetooth.print("$");
   bluetooth.print("$");  // Enter command mode
-  delay(100);*/
-  
+  delay(100);*
+  */
   bluetooth.println("U,9600,N");  // Temporarily Change the baud rate to 9600, no parity
   delay(100);
   
@@ -71,7 +71,7 @@ void loop() {
   
     if(k == 't') { // t = toggle rotation
       if(amIRotating) myRobot.StopRotation();
-      else myRobot.RotateRight();
+      else myRobot.RotateRightSlow();
       amIRotating = !amIRotating;
     }
   

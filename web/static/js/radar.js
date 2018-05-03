@@ -31,6 +31,8 @@ function addToChart(dst, nowAngle){
   //allPoints.push([x, y]);
   //var info = getCordsFor(x, y, dst);
   //console.log(info);
+  dst = 80 < dst ? 80 : dst;
+
   let info = [dst, nowAngle];
   try{
     mapObject.addPoint(info[0], info[1], 30, 1);

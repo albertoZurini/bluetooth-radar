@@ -30,7 +30,7 @@ socket.on('foundNearby', function(data){
   for(let device of data.found){
     let toAdd = ` <input type="radio" id="`+count+`"
                     name="blueAdd" value="`+device.address+`">
-                  <label for="`+count+`">`+device.name+' @ '+device.address+`</label>`;
+                  <label for="`+count+`">`+device.name+' @ '+device.address+`</label><br/>`;
     $("#nearbyDevices").append(toAdd);
     count++;
   }
@@ -105,7 +105,7 @@ $('#toggleRadar').click(function(){
     socket.emit('getAngleAndDistance', {});
     radarLoop = setInterval(function(){
       socket.emit('getAngleAndDistance', {});
-    }, 100);
+    }, 500);
 
   } else {
 
